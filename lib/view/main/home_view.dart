@@ -5,6 +5,9 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_market_app/service/dio_network_src.dart';
 import 'package:flutter_market_app/model/users_model.dart';
 
+
+// get pages ******************************************************************************************************8
+
 class UsersView extends StatefulWidget {
   const UsersView({Key? key}) : super(key: key);
 
@@ -46,7 +49,7 @@ class _UsersViewState extends State<UsersView> {
             errorBuilder:(context, error, stackTrace) => CircularProgressIndicator(),
             ),    
             title: Text(user.firstName?? 'First name' ),
-            subtitle: Text(user.userAgent?? 'User agaent'),
+            subtitle: Text(user.userAgent?? 'User agent'),
               ),
             );
           },

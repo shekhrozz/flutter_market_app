@@ -1,6 +1,5 @@
 
 import 'dart:developer';
-
 import 'package:dio/dio.dart'as dio;
 
 class DioNetworkSrc {
@@ -26,10 +25,26 @@ class DioNetworkSrc {
       return null;
     }
 
+   // post response
 
+   static Future<T?>postRequest<T>({
+    Map<String,dynamic>? header,required String api})async{
+
+    try {
+      var response=await _dio.postUri(Uri.tryParse(api)!,data: header);
+      if (response.statusCode==200||response.statusCode==201) {
+        return response.data as T;
+      }
+    } catch (e) {
+      log(e.toString());
+    }
+   
+
+    }
+    
 }
 
 class AppNetworkConst {
-  
+    static const userlogin='/auth/login';
    static const usersssss='/users';
 }
